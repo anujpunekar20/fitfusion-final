@@ -24,7 +24,7 @@ const HomePage = () => {
             Welcome to FitFusion, your premier destination for yoga and fitness
             enthusiasts. Here, we strive to cultivate a sanctuary where the
             harmony of mind, body, and spirit intertwines seamlessly. Get ready
-            to unleash your potential and awaken your senses. 
+            to unleash your potential and awaken your senses.
           </p>
           <p className=" text-gray-200 py-4 text-justify font-home">
             Whether you're a seasoned yogi, a fitness enthusiast, or someone
@@ -46,13 +46,13 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div class=" bg-gray-900">
-        <div class="text-3xl md:text-4xl font-home font-semibold text-white flex items-center justify-center pt-10">
+      <div className="bg-gray-900">
+        <div className="text-3xl md:text-4xl font-home font-semibold text-white flex items-center justify-center pt-10">
           Our services
         </div>
-        <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mt-8 mx-6 pb-6">
-          <div class="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
-            <h3 class="text-lg font-semibold items-center justify-center flex">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mt-8 mx-6 pb-6">
+          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+            <h3 className="text-lg font-semibold items-center justify-center flex">
               Workouts
             </h3>
             <div className="flex items-center justify-center py-2">
@@ -65,8 +65,8 @@ const HomePage = () => {
             </p>
           </div>
           {/* Diet Card */}
-          <div class="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
-            <h3 class="text-lg font-semibold items-center justify-center flex">
+          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+            <h3 className="text-lg font-semibold items-center justify-center flex">
               Diet
             </h3>
             <div className="flex items-center justify-center py-2">
@@ -80,8 +80,8 @@ const HomePage = () => {
             </p>
           </div>
           {/* Yoga Card */}
-          <div class="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
-            <h3 class="text-lg font-semibold items-center justify-center flex">
+          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+            <h3 className="text-lg font-semibold items-center justify-center flex">
               Yoga
             </h3>
             <div className="flex items-center justify-center py-2">
@@ -95,8 +95,8 @@ const HomePage = () => {
             </p>
           </div>
           {/* Analytics Card */}
-          <div class="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
-            <h3 class="text-lg font-semibold items-center justify-center flex">
+          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+            <h3 className="text-lg font-semibold items-center justify-center flex">
               Analytics
             </h3>
             <div className="flex items-center justify-center py-2">
@@ -111,6 +111,36 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="mb-4 md:mb-0">
+              <h2 className="text-lg font-semibold mb-2">About Us</h2>
+              <p className="text-sm">
+                FitFusion is your go-to destination for holistic wellness,
+                offering a variety of services to help you achieve your fitness
+                goals and live a healthier life.
+              </p>
+            </div>
+            <div className="mb-4 md:mb-0">
+              <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
+              <p className="text-sm">
+                Email: tomarshivansh12@gmail.com <br />
+                Address: C/O Maulana Azad National Institute of Technology
+                (MANIT), New Teaching Block, MANIT, Bhopal, MP, India
+              </p>
+            </div>
+            <div></div>
+          </div>
+          <hr className="border-gray-700 my-6" />
+          <div className="text-sm text-center">
+            <p>
+              &copy; {new Date().getFullYear()} FitFusion. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
