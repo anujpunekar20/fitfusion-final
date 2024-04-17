@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/authRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 const app = express();
 
 dotenv.config();
@@ -11,7 +12,8 @@ app.use(express.json());
 
 connectDB();
 
-app.use('/api', userRoutes);
+app.use('/api', authRoutes);
+app.use('/api', profileRoutes);
 
 const PORT = process.env.PORT;
 
