@@ -1,46 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { FaAngleDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import fitfusion from "../images/fitfusion.jpg";
-
-const Dropdown = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-
-  const handleToggle = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
-
-  const closeDropdown = () => {
-    setDropdownOpen(false);
-  };
-
-  return (
-    <div className="relative">
-      <div className="flex items-center cursor-pointer" onClick={handleToggle}>
-        <FaAngleDown size={15} className="text-gray-400" />
-        <span className="capitalize pr-6 pl-2 text-gray-400 md:text-base text-4xl">
-          Workout
-        </span>
-      </div>
-      {isDropdownOpen && (
-        <div className="absolute top-full left-0 text-white shadow-md rounded-md bg-black">
-          <div className="py-2 px-4 cursor-pointer hover:bg-gray-300 text-gray-400 text-sm border border-gray-400 rounded-t-md flex items-center justify-center hover:text-black duration-200">
-            <Link onClick={closeDropdown} to="/workout/item1">
-              By days
-            </Link>
-          </div>
-          <div className="py-2 px-4 cursor-pointer hover:bg-gray-100 text-gray-400 text-sm rounded-b-md border border-t-0 border-gray-400 flex items-center justify-center hover:text-black duration-200">
-            <Link onClick={closeDropdown} to="/workout/item2">
-              By body parts
-            </Link>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Header = () => {
   const navigate = useNavigate();
@@ -53,7 +15,7 @@ const Header = () => {
   const links = [
     {
       id: 1,
-      dropdown: <Dropdown />,
+      link: "Workout",
     },
     {
       id: 2,
@@ -78,19 +40,14 @@ const Header = () => {
           className="w-12 h-12 rounded-md"
         />
         <h1 className="text-2xl text-white ml-2 font-title">FitFusion</h1>{" "}
-        {/* Adjusted margin */}
       </div>
 
       <h1 className="text-lg text-white md:flex items-center ml-auto hidden font-medium font-title">
-        {links.map(({ id, link, dropdown }) => (
+        {links.map(({ id, link }) => (
           <ul key={id}>
-            {dropdown ? (
-              <li>{dropdown}</li>
-            ) : (
-              <li className="font-medium capitalize px-6 text-gray-400 text-sm cursor-pointer md:text-base hover:scale-105 duration-200">
-                <Link to={link}>{link}</Link>
-              </li>
-            )}
+            <li className="font-medium capitalize px-6 text-gray-400 text-sm cursor-pointer md:text-base hover:scale-105 duration-200">
+              <Link to={link}>{link}</Link>
+            </li>
           </ul>
         ))}
       </h1>

@@ -37,7 +37,7 @@ const Diet = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white">
+    <div className="bg-gray-900 text-white">
       <header className="bg-gray-800 text-white text-center py-4">
         <h1 className="text-3xl font-bold">Weekly Diet Plan</h1>
       </header>
@@ -68,7 +68,7 @@ const Diet = () => {
                               {meal.items.map((item, itemIndex) => (
                                 <li
                                   key={itemIndex}
-                                  className="mb-2 text-justify"
+                                  className="mb-2 text-justify text-gray-300"
                                 >
                                   {item}
                                 </li>

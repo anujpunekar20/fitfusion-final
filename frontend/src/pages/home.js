@@ -115,7 +115,7 @@ const HomePage = () => {
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between">
-            <div className="mb-4 md:mb-0">
+            <div className="mb-4 md:mb-0 mr-6">
               <h2 className="text-lg font-semibold mb-2">About Us</h2>
               <p className="text-sm">
                 FitFusion is your go-to destination for holistic wellness,
