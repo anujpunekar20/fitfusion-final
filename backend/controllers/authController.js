@@ -47,7 +47,10 @@ const login = async (req, res) => {
     const token = generateToken(user._id);
 
     // Send token in response
-    res.json({ token: token });
+    // res.json({ token: token });
+    res.cookie("token", token, { httpOnly: true, maxAge: 3600000 }); // Max age: 1 hour
+    res.json({ message: "Login successful" });
+    
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });

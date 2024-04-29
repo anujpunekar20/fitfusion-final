@@ -3,7 +3,8 @@ const config = require('../config/config');
 
 const authenticateToken = (req, res, next) => {
   // Get token from request headers
-  const token = req.headers['authorization'];
+  // const token = req.headers['authorization'];
+  const token = req.cookies.token;
 
   // If token is not provided
   if (!token) {
