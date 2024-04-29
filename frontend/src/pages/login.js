@@ -11,7 +11,7 @@ const Login = () => {
       <div class="p-2 w-1/2 md:w-1/3">
         <div class="relative">
           <label for="message" class="leading-7 text-sm text-gray-300">
-            Mobile No.
+            Email
           </label>
           <input
             type="number"

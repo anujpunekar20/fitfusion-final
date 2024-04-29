@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import days from "../utils/nonvegDietData";
+import { MdNoFood } from "react-icons/md";
+import { PiBowlFoodDuotone } from "react-icons/pi";
 
 const Diet = () => {
   const [expandedDay, setExpandedDay] = useState(null);
@@ -37,12 +39,27 @@ const Diet = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen pb-10">
+    <div className="bg-gray-900 text-white min-h-screen pb-10 bg-cover">
       <header className="bg-gray-800 text-white text-center py-4">
         <h1 className="text-3xl font-bold">Weekly Diet Plan</h1>
       </header>
       <div className="m-4 text-sm md:text-base">"Welcome to our weekly culinary journey! Delve into our carefully crafted diet plan, designed to nourish your body and tantalize your taste buds. Embrace the artistry of nutrition with our meticulously curated selection of meals, thoughtfully prepared to support your well-being. Step into a world of flavor and vitality as we embark on this delicious adventure together. Behold, our weekly diet plan awaits, nestled within the essence of wholesome living."</div>
       <div className="container mx-auto mx px-4">
+        <div className="grid grid-cols-2 gap-4 my-8">
+          {/* Card 1 */}
+          <div className="bg-gray-950 rounded-md p-6">
+            <h2 className="text-xl font-semibold mb-2 text-center">Importance of Good Diet</h2>
+            <div className="flex items-center justify-center"><MdNoFood size={40}/></div>
+            <p className="text-gray-300">A balanced diet is essential for maintaining good health and well-being. It provides the necessary nutrients, vitamins, and minerals that our bodies need to function properly.</p>
+          </div>
+          {/* Card 2 */}
+          <div className="bg-gray-950 rounded-md p-6">
+            <h2 className="text-xl font-semibold mb-2 text-center">Nutritional Benefits</h2>
+            <div className="flex items-center justify-center"><PiBowlFoodDuotone size={40}/></div>
+            <p className="text-gray-300">Eating a variety of foods from all food groups ensures that we get the right balance of nutrients. It supports growth and development, boosts immunity, and reduces the risk of chronic diseases.</p>
+          </div>
+        </div>
+        
         {days.map((day, dayIndex) => (
           <section key={dayIndex} className="my-8">
             <button

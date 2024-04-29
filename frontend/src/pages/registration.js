@@ -22,7 +22,7 @@ const Registration = () => {
         <div className="p-2 w-1/2 md:w-1/2">
           <div class="relative">
             <label for="message" class="leading-7 text-sm text-gray-300">
-              Mobile No.
+              Email
             </label>
             <input
               type="number"
@@ -44,7 +44,7 @@ const Registration = () => {
         <button
           class="flex mx-auto text-white bg-green-600 border-0 py-2 px-8 focus:outline-none hover:bg-green-700 rounded text-lg mt-4"
         >
-          {loading ? <TailSpin height={25} color="white" /> : "Request OTP"}
+          {loading ? <TailSpin height={25} color="white" /> : "Sign Up"}
         </button>
       </>
       <div className="mt-6 text-gray-300">
