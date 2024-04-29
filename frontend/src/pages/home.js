@@ -1,17 +1,31 @@
 import React from "react";
 import bg_img from "../images/bg_img.jpg";
+import img3 from "../images/img3.jpg";
+import workout_female from "../images/workout_female.jpg";
 import { FaAngleDown } from "react-icons/fa";
 import { IoIosBody } from "react-icons/io";
-import { GrYoga } from "react-icons/gr";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { TbDeviceAnalytics } from "react-icons/tb";
+import { useEffect, useState, useMemo } from "react";
 
 const HomePage = () => {
+  const images = useMemo(() => [bg_img, workout_female, img3], []);
+  const [bgIndex, setbgIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setbgIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 10000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [images]);
+
   return (
     <div>
       <div className="relative bg-gray-900 text-white">
         <img
-          src={bg_img}
+          src={images[bgIndex]}
           alt="background home"
           className="absolute w-full h-full object-cover brightness-50 blur-sm"
         />
@@ -50,7 +64,7 @@ const HomePage = () => {
         <div className="text-3xl md:text-4xl font-home font-semibold text-white flex items-center justify-center pt-10">
           Our services
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center mt-8 mx-6 pb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-center mt-8 mx-6 pb-6">
           <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
             <h3 className="text-lg font-semibold items-center justify-center flex">
               Workouts
@@ -79,34 +93,20 @@ const HomePage = () => {
               just for you.
             </p>
           </div>
-          {/* Yoga Card */}
+          {/* ChatBot Card */}
           <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
             <h3 className="text-lg font-semibold items-center justify-center flex">
-              Yoga
-            </h3>
-            <div className="flex items-center justify-center py-2">
-              <GrYoga size={60} />
-            </div>
-            <p className="text-sm text-justify">
-              Experience the rejuvenating benefits of yoga with our expert
-              instructors. From Vinyasa flow to Ashtanga, we offer a variety of
-              classes suitable for all levels. Strengthen your body, calm your
-              mind, and find balance in your life with our yoga sessions.
-            </p>
-          </div>
-          {/* Analytics Card */}
-          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
-            <h3 className="text-lg font-semibold items-center justify-center flex">
-              Analytics
+              ChatBot
             </h3>
             <div className="flex items-center justify-center py-2">
               <TbDeviceAnalytics size={60} />
             </div>
             <p className="text-sm text-justify">
-              Track your progress and optimize your fitness journey with our
-              advanced analytics tools. Gain insights into your workouts, diet,
-              sleep patterns, and more to make informed decisions and achieve
-              your health and fitness goals faster.
+              Get instant answers to your questions with our ChatBot. Whether
+              you're seeking workout advice, nutritional tips, or motivation,
+              our ChatBot is here to assist you on your fitness journey. Ask
+              anything and receive personalized responses to help you achieve
+              your health and fitness goals.
             </p>
           </div>
         </div>

@@ -5,8 +5,7 @@ import Registration from "./pages/registration";
 import Home from "./pages/home";
 import Workoutmuscles from "./pages/workout_muscles";
 import Diet from "./pages/diet";
-import Yoga from "./pages/yoga";
-import Analytics from "./pages/analytics";
+import ChatBot from "./pages/chatBot";
 
 function App() {
   return (
@@ -18,8 +17,7 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/workout" element={<Workoutmuscles />} />
         <Route path="/diet" element={<Diet />} />
-        <Route path="/yoga" element={<Yoga />} />
-        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/chatbot" element={<ChatBot />} />
       </Routes>
     </div>
   );

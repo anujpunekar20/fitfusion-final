@@ -23,11 +23,7 @@ const Header = () => {
     },
     {
       id: 3,
-      link: "yoga",
-    },
-    {
-      id: 4,
-      link: "analytics",
+      link: "chatbot",
     },
   ];
 

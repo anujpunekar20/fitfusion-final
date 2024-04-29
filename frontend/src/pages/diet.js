@@ -37,7 +37,7 @@ const Diet = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white min-h-screen pb-10">
       <header className="bg-gray-800 text-white text-center py-4">
         <h1 className="text-3xl font-bold">Weekly Diet Plan</h1>
       </header>
