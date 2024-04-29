@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import bg_img from "../images/bg_img.jpg";
 import img3 from "../images/img3.jpg";
 import workout_female from "../images/workout_female.jpg";
@@ -6,11 +8,13 @@ import { FaAngleDown } from "react-icons/fa";
 import { IoIosBody } from "react-icons/io";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { TbDeviceAnalytics } from "react-icons/tb";
-import { useEffect, useState, useMemo } from "react";
 
 const HomePage = () => {
   const images = useMemo(() => [bg_img, workout_female, img3], []);
   const [bgIndex, setbgIndex] = useState(0);
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
   useEffect(() => {
     const interval = setInterval(() => {
       setbgIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -20,6 +24,12 @@ const HomePage = () => {
       clearInterval(interval);
     };
   }, [images]);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
 
   return (
     <div>
@@ -65,7 +75,15 @@ const HomePage = () => {
           Our services
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 justify-center mt-8 mx-6 pb-6">
-          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+          {/* Workouts Card */}
+          <motion.div
+            ref={ref}
+            className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={controls}
+            transition={{ duration: 1 }}
+          >
             <h3 className="text-lg font-semibold items-center justify-center flex">
               Workouts
             </h3>
@@ -77,9 +95,16 @@ const HomePage = () => {
               day, giving you different variety of exercises so that you are
               never bored of taking care of yourself anytime soon!
             </p>
-          </div>
+          </motion.div>
           {/* Diet Card */}
-          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+          <motion.div
+            ref={ref}
+            className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={controls}
+            transition={{ duration: 1 }}
+          >
             <h3 className="text-lg font-semibold items-center justify-center flex">
               Diet
             </h3>
@@ -92,9 +117,16 @@ const HomePage = () => {
               overall health, our nutritionists will create a customized plan
               just for you.
             </p>
-          </div>
+          </motion.div>
           {/* ChatBot Card */}
-          <div className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400">
+          <motion.div
+            ref={ref}
+            className="text-gray-200 bg-gray-950 rounded-lg p-4 border-4 border-gray-400"
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={controls}
+            transition={{ duration: 1 }}
+          >
             <h3 className="text-lg font-semibold items-center justify-center flex">
               ChatBot
             </h3>
@@ -108,7 +140,7 @@ const HomePage = () => {
               anything and receive personalized responses to help you achieve
               your health and fitness goals.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* Footer */}
@@ -146,3 +178,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
