@@ -25,9 +25,20 @@ const ChatBot = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex items-center justify-center">
-      <div className="max-w-lg w-full p-8 bg-white rounded-lg shadow-lg">
+      <div className="hidden lg:block text-white ml-8">
+        <h2 className="text-2xl font-semibold mb-2">AI Chatbot Fun Fact:</h2>
+        <p className="text-gray-300">
+          Did you know that the first chatbot ever created was called ELIZA? It
+          was developed in the 1960s by Joseph Weizenbaum, a computer scientist
+          at MIT.
+        </p>
+      </div>
+
+      <div className="max-w-lg w-full p-8 bg-white rounded-lg shadow-lg m-6">
         <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">FitFusion Chatbot</h1>
+          <h1 className="text-3xl font-bold text-gray-900">
+            FitFusion Chatbot
+          </h1>
         </header>
         <div className="mb-4">
           <textarea
@@ -44,12 +55,40 @@ const ChatBot = () => {
         >
           Generate Answer
         </button>
-        <div className="mt-4">
+        <div className="mt-8">
+          <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-2">Chatbot Details</h2>
+            <p className="text-gray-700 mb-4">
+              FitFusion Chatbot is an AI-powered assistant designed to help you
+              with your fitness-related queries.
+            </p>
+            <ul className="list-disc pl-4">
+              <li>Get personalized workout recommendations.</li>
+              <li>Ask about nutrition tips and recipes.</li>
+              <li>Discover the latest fitness trends and news.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="mt-8">
           <p className="text-gray-700 font-semibold mb-2">Answer:</p>
-          <pre className="w-full bg-gray-100 p-2 rounded-md overflow-y-auto" style={{ maxHeight: '150px', overflowWrap: 'break-word', wordWrap: 'break-word', whiteSpace: 'pre-wrap' }}>
+          <pre
+            className="w-full bg-gray-100 p-2 rounded-md overflow-y-auto"
+            style={{
+              maxHeight: "150px",
+              overflowWrap: "break-word",
+              wordWrap: "break-word",
+              whiteSpace: "pre-wrap",
+            }}
+          >
             {answer}
           </pre>
         </div>
+      </div>
+      <div className="hidden lg:block text-white mr-8">
+        <img
+          src="https://codedesign.org/storage/app/media/uploaded-files/ai-chatbots-%20How%20they%20imrpove%20user%20experience.jpg"
+          alt="Chatbot Illustration"
+        />
       </div>
     </div>
   );
