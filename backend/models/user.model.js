@@ -14,6 +14,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password"],
     },
+    age: {
+      type: Number,
+      required: [true, "Please provide an age"],
+    },
+    weight: {
+      type: Number
+    }
 });
 
 const User = mongoose.model("User", userSchema);

@@ -58,6 +58,27 @@ const Header = () => {
           </span>
         </button>
 
+        {/* <button
+          onClick={() => navigate("/profile")}
+          className="rounded-full border border-yellow-400 flex items-center justify-center mx-4 h-10 w-10"
+        >
+          <img
+            src="sample_profile_photo.jpg"
+            alt="Profile"
+            className="h-full w-full object-cover rounded-full"
+          />
+        </button> */}
+
+        <a href="/profile">
+          <button className="rounded-full border border-yellow-400 flex items-center justify-center mx-4 h-10 w-10">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+              alt="Profile"
+              className="h-full w-full object-cover rounded-full"
+            />
+          </button>
+        </a>
+
         <div
           onClick={() => updateNav()}
           className="cursor-pointer pr-4 text-gray-500 md:hidden mt-2"
@@ -94,3 +115,5 @@ const Header = () => {
 };
 
 export default Header;
+
+//////

@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Workoutmuscles from "./pages/workout_muscles";
 import Diet from "./pages/diet";
 import ChatBot from "./pages/chatBot";
+import UserProfile from "./pages/userProfile";
 
 function App() {
   return (
@@ -18,9 +19,11 @@ function App() {
         <Route path="/workout" element={<Workoutmuscles />} />
         <Route path="/diet" element={<Diet />} />
         <Route path="/chatbot" element={<ChatBot />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
+
